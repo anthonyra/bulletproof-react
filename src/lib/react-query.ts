@@ -4,7 +4,7 @@ import {
   QueryClient,
 } from '@tanstack/react-query';
 
-export const queryConfig = {
+const queryConfig = {
   queries: {
     // throwOnError: true,
     refetchOnWindowFocus: false,
@@ -17,15 +17,15 @@ export const queryClient = new QueryClient({
   defaultOptions: queryConfig,
 });
 
-export type ApiFnReturnType<FnType extends (...args: any) => Promise<any>> =
+type ApiFnReturnType<FnType extends (...args: any) => Promise<any>> =
   Awaited<ReturnType<FnType>>;
 
-export type QueryConfig<T extends (...args: any[]) => any> = Omit<
+type QueryConfig<T extends (...args: any[]) => any> = Omit<
   ReturnType<T>,
   'queryKey' | 'queryFn'
 >;
 
-export type MutationConfig<
+type MutationConfig<
   MutationFnType extends (...args: any) => Promise<any>,
 > = UseMutationOptions<
   ApiFnReturnType<MutationFnType>,
