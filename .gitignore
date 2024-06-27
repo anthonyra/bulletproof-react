@@ -13,12 +13,6 @@
 /playwright/.cache/
 /e2e/.auth/
 
-# storybook
-migration-storybook.log
-storybook.log
-storybook-static
-
-
 # production
 /dist
 
